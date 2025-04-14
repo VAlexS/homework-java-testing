@@ -12,14 +12,23 @@ public class Course {
 
     private double money_earned;
 
-    //Pendiente por incluir: un atributo teacher de la clase Teacher (miembro privado)
+    private Teacher teacher;
 
 
-    public Course(String name, double price) {
+    public Course(String name, double price, Teacher teacher) {
         courseId = UUID.randomUUID().toString();
-        this.name = name;
-        this.price = price;
+        setName(name);
+        setPrice(price);
         money_earned = 0; //inicialmente no ha habido gastos
+        setTeacher(teacher);
+    }
+
+    public Teacher getTeacher() {
+        return teacher;
+    }
+
+    public void setTeacher(Teacher teacher) {
+        this.teacher = teacher;
     }
 
     public String getCourseId() {
@@ -39,6 +48,8 @@ public class Course {
     }
 
     public void setPrice(double price) {
+        if (price < 0)
+            throw new IllegalArgumentException("El precio no puede ser negativo");
         this.price = price;
     }
 
@@ -47,7 +58,13 @@ public class Course {
     }
 
     public void setMoney_earned(double money_earned) {
+        if (money_earned < 0)
+            throw new IllegalArgumentException("La cantidad de dinero no puede ser negativa");
         this.money_earned = money_earned;
+    }
+
+    public boolean equals(Course course){
+        return name.equals(course.name) && price == course.price && money_earned == course.money_earned && teacher.equals(course.teacher);
     }
 
     @Override
@@ -57,6 +74,9 @@ public class Course {
                 ", name='" + name + '\'' +
                 ", price=" + price +
                 ", money_earned=" + money_earned +
+                ", teacher=" + teacher +
                 '}';
     }
+
+
 }
