@@ -1,3 +1,5 @@
+package clases;
+
 import java.util.UUID;
 
 public class Teacher {
