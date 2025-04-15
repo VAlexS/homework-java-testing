@@ -12,18 +12,18 @@ public class Commands1 {
                      Map<String, Student> studentMap,
                      Map<String, Course> courseMap) throws IllegalArgumentException {
 
-    {
+
         if(studentMap.containsKey(studentId)) {
             Student studentEnrolled = studentMap.get(studentId);
         } else {
-            throw new IllegalArgumentException("Id de estudiante no existe.");
+            throw new IllegalArgumentException("Student ID does not exist.");
         }
 
         if (courseMap.containsKey(courseId)) {
             Course course = courseMap.get(courseId);
         }else {
-            throw new IllegalArgumentException("Id de curso no existe.");
+            throw new IllegalArgumentException("Course ID does not exist.");
 
-
+        }
     }
 }
