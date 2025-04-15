@@ -14,6 +14,7 @@ public class Student {
         setAddress(address);
         setEmail(email);
         setStudentId(generateUUID());
+        setCourse(null);
     }
 
     public String getStudentId() {
@@ -58,6 +59,16 @@ public class Student {
 
     private String generateUUID(){
         return UUID.randomUUID().toString();
+    }
 
+    @Override
+    public String toString() {
+        return "Student{" +
+                "studentId='" + studentId + '\'' +
+                ", name='" + name + '\'' +
+                ", address='" + address + '\'' +
+                ", email='" + email + '\'' +
+                ", course=" + course +
+                '}';
     }
 }
