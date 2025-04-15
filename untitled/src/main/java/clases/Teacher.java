@@ -14,11 +14,11 @@ public class Teacher {
     }
 
     public String getTeacherId() {
-        return teacherId;
+        return this.teacherId;
     }
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public void setName(String name) {
@@ -26,23 +26,22 @@ public class Teacher {
     }
 
     public double getSalary() {
-        return salary;
+        return this.salary;
     }
 
     public void setSalary(double salary) {
+        if (salary < 0)
+            throw new IllegalArgumentException("El sueldo no puede ser negativo");
         this.salary = salary;
     }
 
-    public boolean equals(Teacher teacher){
-        return name.equals(teacher.name) && salary == teacher.salary;
-    }
 
     @Override
     public String toString() {
         return "Teacher{" +
-                "teacherId='" + teacherId + '\'' +
-                ", name='" + name + '\'' +
-                ", salary=" + salary +
+                "teacherId='" + this.teacherId + '\'' +
+                ", name='" + this.name + '\'' +
+                ", salary=" + this.salary +
                 '}';
     }
 }

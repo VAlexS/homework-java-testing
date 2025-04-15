@@ -3,30 +3,30 @@ package clases;
 import java.util.UUID;
 
 public class Student {
-    private String studentId;
+    private final String studentId;
     private String name;
     private String address;
     private String email;
     private Course course;
 
     public Student(String name, String address, String email) {
+        studentId = generateUUID();
         setName(name);
         setAddress(address);
         setEmail(email);
+<<<<<<< HEAD
         setStudentId(generateUUID());
         setCourse(null);
+=======
+>>>>>>> a2c3d3fc53fd6a29b96fa931f48a8e0466b04b28
     }
 
     public String getStudentId() {
-        return studentId;
-    }
-
-    private void setStudentId(String studentId) {
-        this.studentId = studentId;
+        return this.studentId;
     }
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public void setName(String name) {
@@ -34,7 +34,7 @@ public class Student {
     }
 
     public String getAddress() {
-        return address;
+        return this.address;
     }
 
     public void setAddress(String address) {
@@ -42,7 +42,7 @@ public class Student {
     }
 
     public String getEmail() {
-        return email;
+        return this.email;
     }
 
     public void setEmail(String email) {
@@ -50,7 +50,7 @@ public class Student {
     }
 
     public Course getCourse() {
-        return course;
+        return this.course;
     }
 
     public void setCourse(Course course) {
@@ -69,6 +69,17 @@ public class Student {
                 ", address='" + address + '\'' +
                 ", email='" + email + '\'' +
                 ", course=" + course +
+                '}';
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "studentId='" + this.studentId + '\'' +
+                ", name='" + this.name + '\'' +
+                ", address='" + this.address + '\'' +
+                ", email='" + this.email + '\'' +
+                ", course=" + this.course +
                 '}';
     }
 }
