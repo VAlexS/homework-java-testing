@@ -27,7 +27,7 @@ SHOW PROFIT: This command will calculate (The total money earned from all course
             throw new IllegalArgumentException("Student not found.");
         }
 
-        return "";
+
     }
 
     //SHOW TEACHERS: This command will display a list of all teachers
