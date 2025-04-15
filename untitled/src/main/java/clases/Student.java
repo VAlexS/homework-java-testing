@@ -60,4 +60,15 @@ public class Student {
         return UUID.randomUUID().toString();
 
     }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "studentId='" + studentId + '\'' +
+                ", name='" + name + '\'' +
+                ", address='" + address + '\'' +
+                ", email='" + email + '\'' +
+                ", course=" + course +
+                '}';
+    }
 }

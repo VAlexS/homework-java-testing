@@ -15,12 +15,11 @@ public class Course {
     private Teacher teacher;
 
 
-    public Course(String name, double price, Teacher teacher) {
+    public Course(String name, double price) {
         courseId = UUID.randomUUID().toString();
         setName(name);
         setPrice(price);
         money_earned = 0; //inicialmente no ha habido gastos
-        setTeacher(teacher);
     }
 
     public Teacher getTeacher() {
@@ -63,9 +62,7 @@ public class Course {
         this.money_earned = money_earned;
     }
 
-    public boolean equals(Course course){
-        return name.equals(course.name) && price == course.price && money_earned == course.money_earned && teacher.equals(course.teacher);
-    }
+
 
     @Override
     public String toString() {
