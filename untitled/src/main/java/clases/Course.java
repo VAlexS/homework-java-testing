@@ -16,14 +16,14 @@ public class Course {
 
 
     public Course(String name, double price) {
-        courseId = UUID.randomUUID().toString();
+        this.courseId = UUID.randomUUID().toString();
         setName(name);
         setPrice(price);
-        money_earned = 0; //inicialmente no ha habido gastos
+        this.money_earned = 0; //inicialmente no ha habido gastos
     }
 
     public Teacher getTeacher() {
-        return teacher;
+        return this.teacher;
     }
 
     public void setTeacher(Teacher teacher) {
@@ -31,11 +31,11 @@ public class Course {
     }
 
     public String getCourseId() {
-        return courseId;
+        return this.courseId;
     }
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public void setName(String name) {
@@ -43,7 +43,7 @@ public class Course {
     }
 
     public double getPrice() {
-        return price;
+        return this.price;
     }
 
     public void setPrice(double price) {
@@ -53,7 +53,7 @@ public class Course {
     }
 
     public double getMoney_earned() {
-        return money_earned;
+        return this.money_earned;
     }
 
     public void setMoney_earned(double money_earned) {
@@ -67,11 +67,11 @@ public class Course {
     @Override
     public String toString() {
         return "Course{" +
-                "courseId='" + courseId + '\'' +
-                ", name='" + name + '\'' +
-                ", price=" + price +
-                ", money_earned=" + money_earned +
-                ", teacher=" + teacher +
+                "courseId='" + this.courseId + '\'' +
+                ", name='" + this.name + '\'' +
+                ", price=" + this.price +
+                ", money_earned=" + this.money_earned +
+                ", teacher=" + this.teacher +
                 '}';
     }
 

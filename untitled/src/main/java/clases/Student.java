@@ -17,11 +17,11 @@ public class Student {
     }
 
     public String getStudentId() {
-        return studentId;
+        return this.studentId;
     }
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public void setName(String name) {
@@ -29,7 +29,7 @@ public class Student {
     }
 
     public String getAddress() {
-        return address;
+        return this.address;
     }
 
     public void setAddress(String address) {
@@ -37,7 +37,7 @@ public class Student {
     }
 
     public String getEmail() {
-        return email;
+        return this.email;
     }
 
     public void setEmail(String email) {
@@ -45,7 +45,7 @@ public class Student {
     }
 
     public Course getCourse() {
-        return course;
+        return this.course;
     }
 
     public void setCourse(Course course) {
@@ -60,11 +60,11 @@ public class Student {
     @Override
     public String toString() {
         return "Student{" +
-                "studentId='" + studentId + '\'' +
-                ", name='" + name + '\'' +
-                ", address='" + address + '\'' +
-                ", email='" + email + '\'' +
-                ", course=" + course +
+                "studentId='" + this.studentId + '\'' +
+                ", name='" + this.name + '\'' +
+                ", address='" + this.address + '\'' +
+                ", email='" + this.email + '\'' +
+                ", course=" + this.course +
                 '}';
     }
 }
