@@ -26,4 +26,12 @@ public class Commands1 {
 
         }
     }
+
+    public assign (String teacherId, String courseId){
+
+    }
+
+
+
+
 }
