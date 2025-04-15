@@ -3,25 +3,21 @@ package clases;
 import java.util.UUID;
 
 public class Student {
-    private String studentId;
+    private final String studentId;
     private String name;
     private String address;
     private String email;
     private Course course;
 
     public Student(String name, String address, String email) {
+        studentId = generateUUID();
         setName(name);
         setAddress(address);
         setEmail(email);
-        setStudentId(generateUUID());
     }
 
     public String getStudentId() {
         return studentId;
-    }
-
-    private void setStudentId(String studentId) {
-        this.studentId = studentId;
     }
 
     public String getName() {
