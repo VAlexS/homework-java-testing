@@ -32,4 +32,17 @@ public class Teacher {
     public void setSalary(double salary) {
         this.salary = salary;
     }
+
+    public boolean equals(Teacher teacher){
+        return name.equals(teacher.name) && salary == teacher.salary;
+    }
+
+    @Override
+    public String toString() {
+        return "Teacher{" +
+                "teacherId='" + teacherId + '\'' +
+                ", name='" + name + '\'' +
+                ", salary=" + salary +
+                '}';
+    }
 }
