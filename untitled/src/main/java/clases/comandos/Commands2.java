@@ -1,4 +1,8 @@
-package clases;
+package clases.comandos;
+
+import clases.Course;
+import clases.Student;
+import clases.Teacher;
 
 import java.util.HashMap;
 
