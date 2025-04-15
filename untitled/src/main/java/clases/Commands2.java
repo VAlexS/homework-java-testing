@@ -18,7 +18,7 @@ SHOW PROFIT: This command will calculate (The total money earned from all course
     static HashMap<String, Course> courses = new HashMap<>();
 
     //LOOKUP STUDENT [STUDENT_ID]: This command will display the full details of the specified student
-    public static Object lookupStudent(String studentId, HashMap<String, Student> studentsEnrolled) throws
+    public static String lookupStudent(String studentId, HashMap<String, Student> studentsEnrolled) throws
              IllegalArgumentException {
 
         if (studentsEnrolled.containsKey(studentId)) {
@@ -26,6 +26,8 @@ SHOW PROFIT: This command will calculate (The total money earned from all course
         } else {
             throw new IllegalArgumentException("Student not found.");
         }
+
+        return "";
     }
 
     //SHOW TEACHERS: This command will display a list of all teachers
@@ -66,4 +68,6 @@ SHOW PROFIT: This command will calculate (The total money earned from all course
         }
         return coursesIncome-teachersCost;
     }
+
+
 }

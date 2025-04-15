@@ -14,11 +14,7 @@ public class Student {
         setName(name);
         setAddress(address);
         setEmail(email);
-<<<<<<< HEAD
-        setStudentId(generateUUID());
         setCourse(null);
-=======
->>>>>>> a2c3d3fc53fd6a29b96fa931f48a8e0466b04b28
     }
 
     public String getStudentId() {
@@ -72,14 +68,4 @@ public class Student {
                 '}';
     }
 
-    @Override
-    public String toString() {
-        return "Student{" +
-                "studentId='" + this.studentId + '\'' +
-                ", name='" + this.name + '\'' +
-                ", address='" + this.address + '\'' +
-                ", email='" + this.email + '\'' +
-                ", course=" + this.course +
-                '}';
-    }
 }
