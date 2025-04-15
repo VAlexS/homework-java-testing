@@ -14,11 +14,11 @@ public class Teacher {
     }
 
     public String getTeacherId() {
-        return teacherId;
+        return this.teacherId;
     }
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public void setName(String name) {
@@ -26,7 +26,7 @@ public class Teacher {
     }
 
     public double getSalary() {
-        return salary;
+        return this.salary;
     }
 
     public void setSalary(double salary) {
