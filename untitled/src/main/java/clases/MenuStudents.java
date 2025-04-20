@@ -9,6 +9,8 @@ import java.util.regex.Pattern;
 
 
 public class  MenuStudents {
+
+
     public Student[] launchMenu(Map<String, Student> studentsMap) {
         int numStudentsToRegister=howManyStudents();
         Student[] studentsRegistered= new Student[numStudentsToRegister];
@@ -23,13 +25,13 @@ public class  MenuStudents {
 
     public String getStudentNameRegistration() {
         Scanner scan = new Scanner(System.in);
-        System.out.println("Student name: ");
+        System.out.println("Intoduzca nombre del estudiante ");
         return scan.nextLine();
     }
 
     public String getStudentAddressRegistration() {
         Scanner scan = new Scanner(System.in);
-        System.out.println("Student name: ");
+        System.out.println("Introduzca dirección de estudante: ");
         return scan.nextLine();
     }
 
@@ -37,7 +39,7 @@ public class  MenuStudents {
         boolean correctMail = false;
         Scanner scan = new Scanner(System.in);
         while (!correctMail) {
-            System.out.println("eMail address: ");
+            System.out.println("Email de estudiante: ");
         }
         return scan.nextLine();
     }
