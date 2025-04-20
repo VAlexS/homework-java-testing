@@ -7,7 +7,8 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class MenuStudents {
+
+public class  MenuStudents {
     public Student[] launchMenu(Map<String, Student> studentsMap) {
         int numStudentsToRegister=howManyStudents();
         Student[] studentsRegistered= new Student[numStudentsToRegister];
@@ -49,9 +50,6 @@ public class MenuStudents {
         return new Student(name, address, email);
     }
 
-
-
-
     boolean isValidMail(String mail) {
         String regexEmail = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@" +
                 "(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
@@ -60,18 +58,18 @@ public class MenuStudents {
         return match.matches();
     }
 
-    public int howManyStudents() {
+    public int howManyStudents() throws InputMismatchException{
         boolean correctNumber = false;
         int numStudent = 0;
         Scanner scan = new Scanner(System.in);
 
         while (!correctNumber) {
             try {
-                System.out.println("Please insert number of students to register: ");
+                System.out.println("¿Cuantos estudiantes quiere registrar?: ");
                 numStudent = scan.nextInt();
                 correctNumber = true;
             } catch (InputMismatchException e) {
-                System.out.println(("Please, insert correct value"));
+                System.out.println(("Por favor, inserta un valor correcto"));
                 scan.next();
             }
 
