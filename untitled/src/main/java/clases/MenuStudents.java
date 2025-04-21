@@ -36,12 +36,15 @@ public class  MenuStudents {
     }
 
     public String getStudentEmailRegistration() {
-        boolean correctMail = false;
+        boolean failMail = true;
         Scanner scan = new Scanner(System.in);
-        while (!correctMail) {
+        while (failMail) {
             System.out.println("Email de estudiante: ");
-        }
-        return scan.nextLine();
+            var option = scan.nextLine();
+            if (isValidMail(option)) failMail = false;
+    }
+        return option;
+
     }
 
     public Student studentRegistration() {
