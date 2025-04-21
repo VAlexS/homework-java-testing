@@ -14,7 +14,7 @@ public  class BuilderMenuStudent {
     static HashMap<String, Course> courses = new HashMap<>();
 
 
-    public void buildMenuStudents() {
+    public static void buildMenuStudents() {
         MenuStudents menuStudents = new MenuStudents();//Map de Students
         try {
 

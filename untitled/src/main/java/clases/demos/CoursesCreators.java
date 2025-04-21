@@ -10,6 +10,17 @@ public class CoursesCreators {
     public static void createCourses(){
         var scanner = new Scanner(System.in);
 
+        /*System.out.println("¿Quieres añadir cursos a tu escuela? ");
+        System.out.println(" Sí [s] | No [n]");
+        switch (scanner.nextLine().toLowerCase()) {
+            case "s":
+                break;
+            case "n":
+                System.out.println("De acuerdo.");
+                return;
+            default:
+                throw new IllegalArgumentException();
+        }*/
 
         System.out.print("¿Cuántos cursos deseas crear? ");
         int numCourses = scanner.nextInt();

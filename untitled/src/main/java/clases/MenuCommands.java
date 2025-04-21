@@ -3,10 +3,13 @@ package clases;
 import java.util.Scanner;
 
 public class MenuCommands {
-    Scanner scanner = new Scanner(System.in);
-    int opcion;
 
-    public void launchMenuCommands() {
+
+    public static void launchMenuCommands() {
+
+        Scanner scanner = new Scanner(System.in);
+        int opcion;
+
         do {
             System.out.println("\n--- MENÚ PRINCIPAL ---");
             System.out.println("1. INSCRIBIR estudiante en curso");
@@ -18,7 +21,7 @@ public class MenuCommands {
             System.out.println("7. MOSTRAR PROFESORES");
             System.out.println("8. BUSCAR PROFESOR por ID");
             System.out.println("9. MOSTRAR GANANCIAS");
-            System.out.println("0. SALIR");
+            System.out.println("10. SALIR");
             System.out.print("Seleccione una opción: ");
 
             opcion = scanner.nextInt();
@@ -26,7 +29,8 @@ public class MenuCommands {
 
             switch (opcion) {
                 case 1: // Inscribir estudiante Id estudiante id curso
-
+                    System.out.print("Introduzca el id del estudiante: ");
+                    String id = scanner.nextLine();
                     break;
 
                 case 2: //Asginar id profesor id curso
@@ -65,7 +69,7 @@ public class MenuCommands {
 
                     break;
 
-                case 0:
+                case 10:
                     System.out.println("Saliendo del sistema...");
                     break;
 
