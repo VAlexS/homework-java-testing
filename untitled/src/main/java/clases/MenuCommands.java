@@ -1,14 +1,47 @@
 package clases;
 
+import clases.comandos.Commands;
+
 import java.util.Scanner;
 
 public class MenuCommands {
+
+    public static int checkCommand (String input) {
+        String posibleCommand = input.toLowerCase();  // la entrada a minúsculas
+
+        String[] validCommands = {
+                "enroll \\d+ \\d+", //0
+                "assign \\d+ \\d+",//1
+                "show courses",//2
+                "lookup course \\d+",//3
+                "show students",//4
+                "lookup student \\d+",//5
+                "show teachers", //6
+                "lookup teacher \\d+",//7
+                "show profit" //8
+        };
+    /*
+    for (String regex : validCommands) {
+        if (posibleCommand.matches(regex)) {
+            return true;
+        }
+    }*/
+        for (int i=0; i<=posibleCommand.length();i++){
+            if (posibleCommand.matches(validCommands[i])) {
+                return i;
+            }
+
+        }
+        return -1;
+
+    }
+
 
 
     public static void launchMenuCommands() {
 
         Scanner scanner = new Scanner(System.in);
-        int opcion;
+    int comando;
 
         do {
             System.out.println("\n--- MENÚ PRINCIPAL ---");
@@ -24,52 +57,52 @@ public class MenuCommands {
             System.out.println("10. SALIR");
             System.out.print("Seleccione una opción: ");
 
-            opcion = scanner.nextInt();
-            scanner.nextLine(); // limpiar el buffer
+           String  scannedCommand = scanner.nextLine();
 
-            switch (opcion) {
-                case 1: // Inscribir estudiante Id estudiante id curso
-                    System.out.print("Introduzca el id del estudiante: ");
-                    String id = scanner.nextLine();
+             comando  = checkCommand(scannedCommand);
+            String [] commandArr = scannedCommand.trim().split(" ");
+            switch (comando) {
+                case 0: // Inscribir estudiante Id estudiante id curso
+                    Commands.enroll(commandArr[1],commandArr[2],Commands.students, Commands.courses);
                     break;
 
-                case 2: //Asginar id profesor id curso
-
-                    break;
-
-                case 3: //Mostrar cursos
+                case 1: //Asginar id profesor id curso
 
                     break;
 
-                case 4: //Buscar curso
+                case 2: //Mostrar cursos
+
+                    break;
+
+                case 3: //Buscar curso
                     System.out.print("Ingrese ID del curso a buscar: ");
 
                     break;
 
-                case 5: // Mostrar Estudiante
+                case 4: // Mostrar Estudiante
 
                     break;
 
-                case 6: //Buscar estudiante por ID
+                case 5: //Buscar estudiante por ID
                     System.out.print("Ingrese ID del estudiante a buscar: ");
 
                     break;
 
-                case 7: //Mostrar profesores
+                case 6: //Mostrar profesores
 
                     break;
 
-                case 8: //Buscar profesor by ID
+                case 7: //Buscar profesor by ID
                     System.out.print("Ingrese ID del profesor a buscar: ");
                     int profesorBuscar = scanner.nextInt();
 
                     break;
 
-                case 9: //MOstrar ganancias
+                case 8: //MOstrar ganancias
 
                     break;
 
-                case 10:
+                case 9:
                     System.out.println("Saliendo del sistema...");
                     break;
 
@@ -77,7 +110,7 @@ public class MenuCommands {
                     System.out.println("Opción no válida. Intente nuevamente.");
             }
 
-        } while (opcion != 0);
+        } while (comando != 0);
 
         scanner.close();
     }
