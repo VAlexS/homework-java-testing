@@ -25,7 +25,7 @@ public class Commands {
     students.put(student1.getStudentId(), student1);
 
     Course course1 = new Course("Python", 300);
-    courses.put(course1.getName(), course1);
+    courses.put(course1.getCourseId(), course1);
 
     Teacher teacher1 = new Teacher("Jacinta", 1900);
     teachers.put(teacher1.getTeacherId(), teacher1);
@@ -127,6 +127,7 @@ public class Commands {
             Student student = studentMap.get(studentId);
             Course course = courseMap.get(courseId);
             student.setCourse(course);
+            System.out.println(student.getName()" matriculado en " + course.getName()+".");
         }
     }
 
@@ -142,6 +143,7 @@ public class Commands {
             Teacher teacher = teacherMap.get(teacherId);
             Course course = courseMap.get(courseId);
             course.setTeacher(teacher);
+            System.out.println("Profesor asignado al curso con éxito.");
         }
     }
 
@@ -176,7 +178,9 @@ public class Commands {
             IllegalArgumentException {
 
         if (studentsEnrolled.containsKey(studentId)) {
-            return studentsEnrolled.get(studentId).toString();
+            String studentFound = studentsEnrolled.get(studentId).toString();
+            System.out.println(studentFound);
+            return studentFound;
         } else {
             throw new IllegalArgumentException("Student not found.");
         }
@@ -189,6 +193,7 @@ public class Commands {
         if (teachers.isEmpty()) {
             throw new IllegalStateException("Sorry. Any available teacher yet.");
         } else {
+            System.out.println(teachers);
             return teachers.toString();
         }
     }
@@ -197,6 +202,7 @@ public class Commands {
     public static Object lookupTeacher(String teacherId, HashMap<String, Teacher> teachersHired) throws
             IllegalArgumentException {
         if (teachersHired.containsKey(teacherId)) {
+            System.out.println(teachersHired.get(teacherId));
             return teachersHired.get(teacherId).toString();
         } else {
             throw new IllegalArgumentException("Teacher not found.");
@@ -220,6 +226,7 @@ public class Commands {
         for (Course course : courses.values()) {
             coursesIncome += course.getMoney_earned();
         }
+        System.out.println(STR."\{coursesIncome - teachersCost}€");
         return coursesIncome - teachersCost;
     }
 
