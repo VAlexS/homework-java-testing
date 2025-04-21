@@ -16,9 +16,22 @@ public class Commands {
     @Post: Display values from Map parameter.
      */
 
-    static HashMap<String, Student> students = new HashMap<>();
-    static HashMap<String, Teacher> teachers = new HashMap<>();
-    static HashMap<String, Course> courses = new HashMap<>();
+    public static HashMap<String, Student> students = new HashMap<>();
+   public  static HashMap<String, Teacher> teachers = new HashMap<>();
+    public static HashMap<String, Course> courses = new HashMap<>();
+
+    public static void initializeBBDD(){
+    Student student1 = new Student("Juan", "Calle Falsa", "juan@gmail.com");
+    students.put(student1.getStudentId(), student1);
+
+    Course course1 = new Course("Python", 300);
+    courses.put(course1.getName(), course1);
+
+    Teacher teacher1 = new Teacher("Jacinta", 1900);
+    teachers.put(teacher1.getTeacherId(), teacher1);
+}
+
+
 
     private static boolean existStudentId(String studentId, Map<String, Student> studentMap)
             throws IllegalArgumentException {

@@ -1,16 +1,12 @@
 package clases.demos;
 
 import clases.BuilderMenuStudent;
+import clases.MenuCommands;
 import clases.Teacher;
+import clases.comandos.Commands;
+
 import java.util.HashMap;
 import java.util.Scanner;
-
-
-
-//    The application starts by asking the user for a name for the school
-//    Next, the user is asked for a number of how many teachers should be created
-//    Next, the user is prompted to enter the details of each teacher (based on the number chosen above)
-
 
 public class TeachersMenu {
     private static Scanner scanner = new Scanner(System.in);
@@ -25,7 +21,11 @@ public class TeachersMenu {
     public static final String PINK_BACK = "\u001B[45m";
 
     public static void main(String[] args) {
-
+       Commands.initializeBBDD();
+        System.out.println(Commands.students);
+        System.out.println(Commands.courses);
+        System.out.println(Commands.teachers);
+        MenuCommands.launchMenuCommands();
         createNewSchool();
         newTeacherMenu();
         CoursesCreators.createCourses();
