@@ -38,10 +38,8 @@ public class Teacher {
 
     @Override
     public String toString() {
-        return "Teacher{" +
-                "teacherId='" + this.teacherId + '\'' +
-                ", name='" + this.name + '\'' +
-                ", salary=" + this.salary +
-                '}';
+        return "=========================\n" + "ID:" + this.teacherId + '\'' +
+                "\nNombre:'" + this.name + '\'' +
+                "\nSalario:" + this.salary + String.format("%.2f", this.salary) + "€" ;
     }
 }
