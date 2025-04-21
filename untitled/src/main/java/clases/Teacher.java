@@ -40,6 +40,8 @@ public class Teacher {
     public String toString() {
         return "=========================\n" + "ID:" + this.teacherId + '\'' +
                 "\nNombre:'" + this.name + '\'' +
-                "\nSalario:" + this.salary + String.format("%.2f", this.salary) + "€" ;
+                "\nSalario:" + String.format("%.2f", this.salary) + "€" ;
     }
+
+
 }

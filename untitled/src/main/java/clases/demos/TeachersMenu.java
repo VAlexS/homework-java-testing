@@ -1,5 +1,6 @@
 package clases.demos;
 
+import clases.BuilderMenuStudent;
 import clases.Teacher;
 import java.util.HashMap;
 import java.util.Scanner;
@@ -16,26 +17,30 @@ public class TeachersMenu {
     private static HashMap<String, Teacher> teachers = new HashMap<>();
 
 // COLORES PARA LA TERMINAL
-//    public static final String RESET = "\u001B[0m";
-//    public static final String RED = "\u001B[31m";
-//    public static final String GREEN = "\u001B[32m";
-//    public static final String YELLOW = "\u001B[33m";
-//    public static final String BLUE = "\u001B[34m";
-//    public static final String PINK_BACK = "\u001B[45m";
+    public static final String RESET = "\u001B[0m";
+   public static final String RED = "\u001B[31m";
+    public static final String GREEN = "\u001B[32m";
+    public static final String YELLOW = "\u001B[33m";
+    public static final String BLUE = "\u001B[34m";
+    public static final String PINK_BACK = "\u001B[45m";
 
     public static void main(String[] args) {
 
         createNewSchool();
         newTeacherMenu();
+        CoursesCreators.createCourses();
+        BuilderMenuStudent.buildMenuStudents();
 
         System.out.println("¿Necesitas algo más?");
             boolean running = true;
 
             while (running) {
-                System.out.println("========= MENÚ PRINCIPAL =========");
+                System.out.println(BLUE+"========= MENÚ PRINCIPAL ========="+RESET);
                 System.out.println("1. Crear nueva escuela");
                 System.out.println("2. Añadir profesores");
-                System.out.println("3. Salir");
+                System.out.println("3. Añadir cursos");
+                System.out.println("4. Añadir estudiantes");
+                System.out.println("10. Salir");
                 System.out.print("Selecciona una opción: ");
 
                 String choice = scanner.nextLine().trim();
@@ -47,8 +52,13 @@ public class TeachersMenu {
                     case "2":
                         newTeacherMenu();
                         break;
-
                     case "3":
+                        CoursesCreators.createCourses();
+                        break;
+                    case "4":
+                        BuilderMenuStudent.buildMenuStudents();
+                        break;
+                    case "10":
                         running = false;
                         System.out.println("Saliendo del programa. ¡Hasta pronto!");
                         break;
@@ -71,7 +81,7 @@ public class TeachersMenu {
         String name;
         double salary;
 
-        System.out.println("¿Quieres añadir profesores a tu escuela? ");
+        /*System.out.println("¿Quieres añadir profesores a tu escuela? ");
         System.out.println(" Sí [s] | No [n]");
         switch (scanner.nextLine().toLowerCase()) {
             case "s":
@@ -81,7 +91,7 @@ public class TeachersMenu {
                 return;
             default:
                 throw new IllegalArgumentException();
-        }
+        }*/
         System.out.println("=========================");
         System.out.println("¿Cuántos profesores necesitas?");
         int n = scanner.nextInt();
