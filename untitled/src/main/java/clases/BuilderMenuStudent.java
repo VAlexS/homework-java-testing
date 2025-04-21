@@ -6,9 +6,9 @@ import java.util.HashMap;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public static class BuilderMenuStudent {
+public  class BuilderMenuStudent {
 
-    //Estructuras de datos creadas por Ángelagit
+    //Estructuras de datos creadas por Ángela git
     static HashMap<String, Student> students = new HashMap<>();
     static HashMap<String, Teacher> teachers = new HashMap<>();
     static HashMap<String, Course> courses = new HashMap<>();
